@@ -9,8 +9,12 @@ import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.test1.R
 import com.example.test1.R.layout.activity_first_app
+import com.example.test1.firstApp.category.CategoriesAdapter
+import com.example.test1.firstApp.category.TaskCategory
 import com.google.android.material.slider.RangeSlider
 import java.text.DecimalFormat
 
@@ -24,6 +28,16 @@ class FirstAppActivity : AppCompatActivity() {
 
     private lateinit var tvHeight: TextView
     private lateinit var rsHeight: RangeSlider
+
+    private lateinit var rvCategory : RecyclerView
+
+    private lateinit var categoriesAdapter: CategoriesAdapter
+
+    private var categories = listOf(
+        TaskCategory.Business,
+        TaskCategory.Personal,
+        TaskCategory.Other
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +64,9 @@ class FirstAppActivity : AppCompatActivity() {
 
     private fun initUi() {
         setGenderColor()
+        categoriesAdapter = CategoriesAdapter(categories)
+        rvCategory.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rvCategory.adapter = categoriesAdapter
     }
 
     private fun initComponents() {
@@ -57,6 +74,7 @@ class FirstAppActivity : AppCompatActivity() {
         viewFemale = findViewById(R.id.viewFemale)
         tvHeight = findViewById(R.id.tvHeight)
         rsHeight = findViewById(R.id.rsHeight)
+        rvCategory = findViewById(R.id.rvCategories)
     }
 
     private fun initListeners() {
