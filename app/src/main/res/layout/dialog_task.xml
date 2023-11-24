@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="250dp"
+    android:background="@android:color/holo_green_dark"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="5dp"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/etTask"
+        android:backgroundTint="@color/white"
+        android:layout_width="match_parent"
+        android:hint="Anade una tarea"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/rgCategories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <RadioButton
+            android:id="@+id/rbBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Negocios"
+            android:checked="true"
+            android:textColor="@color/white"
+            android:buttonTint="@color/purple_700"
+            />
+        <RadioButton
+            android:id="@+id/rbPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal"
+            android:textColor="@color/white"
+            android:buttonTint="@color/teal_200"
+            />
+        <RadioButton
+            android:id="@+id/rbOther"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Otros"
+            android:textColor="@color/white"
+            android:buttonTint="@android:color/holo_orange_dark"
+            />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnAddTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear tarea"
+        />
+
+
+
+</LinearLayout>
